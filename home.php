@@ -1,4 +1,6 @@
-<?php include('view.php');  ?>
+<?php
+    session_start();
+?>
 
 <!doctype html>
 <html lang="en">
@@ -25,7 +27,7 @@
                     </div>
                     <div class="bio">
                         <br>
-                        <h6 class="text-white"> User: <?php echo $show ?> </h6>
+                        <h6 class="text-white"> User: <?php echo $_SESSION['email'] ?> </h6>
                     </div>
                 </div>
 
@@ -54,10 +56,22 @@
                     </div>
                 </div> -->
 
-                <div class="container">
-                    <?php  echo $content ?>
+                <div class="container mt-5 p-5">
+                    <?php if(isset($_POST['postFeed'])){
+                        echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <strong>Nothing to show right now!</strong> You should check in on some of those fields below.
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>';
+                    } ?>
+
+                    <?php if(isset($_POST['profile'])){
+                        include('updateForm.php');
+                    }?>
+
                 </div>
-                
+
             </div>
         </div>
 

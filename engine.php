@@ -1,8 +1,8 @@
 <?php
-
+session_start();
 
 // Initializing Variables for registeration
-session_start();
+
 $username = '';
 $email = '';
 $password = '';
@@ -21,6 +21,7 @@ $logPassword = '';
 
 
 $db = new mysqli('localhost','root','','crud');
+$connect = mysqli_connect('localhost', 'root', '', 'crud');
 
 if($db->connect_error){
     $msg = '<div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -77,32 +78,34 @@ function validate($data){
 
 function user_login(){
     global $logEmail, $logPassword, $db, $msg;
-    $logEmail = validate($_POST['email']);
-    $logPassword = validate($_POST['password']);
+    $logEmail = $_POST['email'];
+    $logPassword = $_POST['password'];
+    $checkPswrd = md5($logPassword);
 
-    $sql = "SELECT * FROM userinfo WHERE email = '$logEmail' AND pswrd = '$logPassword' LIMIT 1";
+    $sql = "SELECT * FROM userinfo WHERE email = '$logEmail' AND pswrd = '$checkPswrd'";
     $result = $db->query($sql);
 
-    if($result->num_rows > 0){
+    if($result->num_rows == 1){
         $data = $result->fetch_assoc();
-        $msg = '<div class="alert alert-warning alert-dismissible fade show" role="alert">
-        <strong>Welcome, '+ $logEmail +' !</strong>
+        $_SESSION['email'] = $data['email'];
+
+        $msg = '<div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Welcome !</strong>
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>';
 
-        $_SESSION['username'] = $data['username'];
-
-        header("refresh: 5; url=home.php");
+        header("refresh: 1; url=home.php");
 
     }else{
         $msg = '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-        <strong>Incorrect Username or Password!</strong> Please insert valid username or password.
+        <strong>Incorrect Username or Password! </strong> Please insert valid username or password.
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>';
+
     }
 }
 
