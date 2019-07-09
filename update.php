@@ -1,6 +1,6 @@
 <?php
 session_start();
-require('mysql_updateForm.php');
+require('mysql_connect.php');
 include('validate.php');
 
     $emmail = $_SESSION['email'];
