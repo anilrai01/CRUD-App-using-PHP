@@ -57,6 +57,7 @@
                 </div> -->
 
                 <div class="container mt-5 p-5">
+                    
                     <?php if(isset($_POST['postFeed'])){
                         echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
                         <strong>Nothing to show right now!</strong> You should check in on some of those fields below.
@@ -67,6 +68,7 @@
                     } ?>
 
                     <?php if(isset($_POST['profile'])){
+                        // echo "Pressed";
                         include('dispForm.php');
                     }?>
 

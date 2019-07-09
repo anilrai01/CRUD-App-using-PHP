@@ -1,12 +1,14 @@
 <?php
     require("mysql_updateForm.php");
+    include('validate.php');
+
     $email = $_SESSION['email'];
     $result = mysqli_query($connect, " SELECT * FROM userinfo where email = '$email' ");
     // session_destroy();
 
 ?>
 
-<?php include('update.php');
+<?php $msg = "";
  while ($res = mysqli_fetch_array($result)) { ?>
 
     <form class="regForm" action="update.php" method="POST">
@@ -55,14 +57,18 @@
                     <input type="text" class="form-control" name="inputZip" value = "<?php echo $res['zip']?>">
                 </div>
             </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <div class="form-check">
                 <input class="form-check-input" type="checkbox" name="gridCheck">
                 <label class="form-check-label" for="gridCheck">
                     Check me out
                 </label>
                 </div>
-            </div>
+            </div> -->
             <button type="submit" class="btn btn-primary" name = "update">Update</button>
         </form>
-<?php } ?>
+<?php } 
+
+handle_errors();
+
+?>
