@@ -67,7 +67,7 @@
                     } ?>
 
                     <?php if(isset($_POST['profile'])){
-                        include('updateForm.php');
+                        include('dispForm.php');
                     }?>
 
                 </div>

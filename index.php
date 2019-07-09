@@ -40,6 +40,7 @@
                             </div> -->
                             <button type="submit" class="btn btn-primary mr-2" name="signIn">Sign In</button>
                         </form>
+
                         
                     </div>
                 
@@ -53,6 +54,7 @@
                     <!-- <div class="banner-svg"></div> -->
 
                     <?php echo $msg ?>
+                    <?php handle_errors(); ?>
 
                 </div>
 
@@ -122,10 +124,11 @@
                 </div> 
                 <!-- End of Registeration Side -->
 
-                <div class="col-md-2">
-                    <!-- <h2>Already Have an Accout ?</h2>
-                    <h3>Log In here -></h3> -->
-                </div>
+
+                <!-- <div class="col-md-2">
+                     <h2>Already Have an Accout ?</h2>
+                    <h3>Log In here -></h3>
+                </div> -->
 
                 
             </div>

@@ -1,25 +1,15 @@
 <?php
-
-// require 'view.php';
-// global $email;
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "crud";
-
-    $connect = mysqli_connect($servername, $username, $password, $dbname);
-    if (!$connect) {
-    die("Connection failed: " . mysqli_connect_error());
-    }
-
+    require("mysql_updateForm.php");
     $email = $_SESSION['email'];
     $result = mysqli_query($connect, " SELECT * FROM userinfo where email = '$email' ");
     // session_destroy();
+
 ?>
 
-<?php while ($res = mysqli_fetch_array($result)) { ?>
+<?php include('update.php');
+ while ($res = mysqli_fetch_array($result)) { ?>
 
-    <form class="regForm" method="POST">
+    <form class="regForm" action="update.php" method="POST">
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputUsername">Username</label>
@@ -75,6 +65,4 @@
             </div>
             <button type="submit" class="btn btn-primary" name = "update">Update</button>
         </form>
-
-
 <?php } ?>
