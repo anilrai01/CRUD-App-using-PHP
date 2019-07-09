@@ -65,3 +65,30 @@ body{
     width: 60%;
     background: red;
 } */
+
+/* Defining the style of Media */
+
+.media{
+    display: flex;
+    flex-direction: row;
+    background: #eee;
+    padding: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    transition: 0.3s ease-in-out;
+}
+.media:hover{
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+/* .mediaa-img{
+    width: 40%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.mediaa-img .m-img{
+    width: 100%;
+    height: 100%;
+} */

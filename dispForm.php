@@ -11,7 +11,7 @@
 <?php $msg = "";
  while ($res = mysqli_fetch_array($result)) { ?>
 
-    <form class="regForm" action="update.php" method="POST">
+    <form class="regForm" action="updateForm.php" method="POST">
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputUsername">Username</label>
