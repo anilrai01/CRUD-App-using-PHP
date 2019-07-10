@@ -23,7 +23,7 @@ if(isset($_POST['uploadFeed'])){
     $fileExt = explode('.', $fileName);
     $fileActualExt = strtolower(end($fileExt));
 
-    $validExt = array('jpg', 'jpeg', 'png', 'pdf');
+    $validExt = array('jpg', 'jpeg', 'png', 'pdf', 'gif');
 
     if(in_array($fileActualExt, $validExt)){
         if($fileError === 0){
@@ -31,12 +31,14 @@ if(isset($_POST['uploadFeed'])){
                 $fileNewName = uniqid('', true).".".$fileActualExt;
                 $fileDestination = 'img/FeedUploads/'.$fileNewName;
                 $stats = move_uploaded_file($fileTempName, $fileDestination);
-                echo $title."<br>".$description."<br>".$fileNewName;
+                // echo $title."<br>".$description."<br>".$fileNewName;
                 $query = "INSERT INTO timeline(title,descTime,img,ids)values('$title', '$description', '$fileDestination', '$id');";
-                echo "<br>".$query;
+                // echo "<br>".$query;
                 if(mysqli_query($connect, $query)){
                     echo "Files Uploaded Successfully";
-                    header("refresh: 2; Location: home.php");
+                    // header("refresh: 2; Location: home.php");
+                    header("refresh: 2; url=home.php");
+
                 }
 
                 // header("Location: home.php?uploadSuccess");
@@ -45,12 +47,11 @@ if(isset($_POST['uploadFeed'])){
             }
         }else{
             echo "There was error uploading Files";
+            echo $_FILES['file']['error'];
         }
     }else{
         echo "You cannot upload files of this type";
     }
-
-
 }
 
 ?>
