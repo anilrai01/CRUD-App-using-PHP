@@ -56,25 +56,17 @@ body{
 
 .togglers .ownBtn{
     border: none;
-
 }
-
-/* Form */
-/* 
-.form{
-    width: 60%;
-    background: red;
-} */
 
 /* Defining the style of Media */
 
-.media{
+.dashField .media{
     display: flex;
     flex-direction: row;
-    background: #eee;
+    background: rgb(243, 243, 243);
     padding: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
+    border-radius: 20px;
     transition: 0.3s ease-in-out;
     margin-bottom: 20px;
 }
@@ -82,14 +74,15 @@ body{
     transform: translateY(-5px);
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
 }
-
-/* .mediaa-img{
-    width: 40%;
-    height: 200px;
-    overflow: hidden;
-    border-radius: 50%;
+ .media-img{
+    /* width: 40%;
+   height: 200px; 
+    height: auto;*/
+    overflow: hidden;  
+    border-radius: 20px; 
 }
-.mediaa-img .m-img{
+/* 
+.media-img img{
     width: 100%;
     height: 100%;
 } */

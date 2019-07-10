@@ -1,4 +1,4 @@
-<form action="updateShareFeed.php" method="POST" enctype="multipart/form-data">
+<form action="uploadShareFeed.php" method="POST" enctype="multipart/form-data">
     <!-- <h3>Start sharing your feelings !</h3> -->
     <div class="alert alert-primary" role="alert">
       Start posting and recording your stories.
