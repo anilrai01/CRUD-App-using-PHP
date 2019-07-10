@@ -2,6 +2,12 @@
     height: auto;
     overflow: hidden;
 }
+
+.custom-txt{
+    font-family: 'Dancing Script', cursive;
+    font-weight: 700;
+    font-size: 50px;
+}
 /* .bgg{
     background: url('../img/blogs.jpg');
     background-size: cover;

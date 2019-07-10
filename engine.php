@@ -120,6 +120,7 @@ function user_login(){
     if($result->num_rows == 1){
         $data = $result->fetch_assoc();
         $_SESSION['email'] = $data['email'];
+        $_SESSION['id'] = $data['ids'];
 
         $msg = '<div class="alert alert-success alert-dismissible fade show" role="alert">
         <strong>Welcome !</strong>

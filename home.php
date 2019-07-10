@@ -57,22 +57,28 @@
                     </div>
                 </div> -->
 
-                <div class="container mt-5 p-5">
+                <div class="container mt-5 p-5 dashField">
+
+                
+                    <?php include('timeline.php');  ?>
                     
                     <?php 
                         if(isset($_POST['postFeed'])){
+                            include('clearView.php');
                             include('shareFeed.php');
                         } 
                     ?>
 
                     <?php 
                         if(isset($_POST['memories'])){
-                            include('myFeed.php');
+                            include('clearView.php');
+                            include('timeline.php');
                         }
                     ?>
 
                     <?php 
                         if(isset($_POST['profile'])){
+                        include('clearView.php');
                         // echo "Pressed";
                         include('dispForm.php');
                         }

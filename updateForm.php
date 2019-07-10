@@ -3,7 +3,7 @@ session_start();
 require('mysql_connect.php');
 include('validate.php');
 
-    $emmail = $_SESSION['email'];
+    $id = $_SESSION['id'];
     
     $username = validate($_POST['inputUser']);
     
@@ -60,7 +60,7 @@ include('validate.php');
         cont = '$contact',
         city = '$city',
         stat = '$state',
-        zip = '$zip' where email = '$emmail' ";
+        zip = '$zip' where ids = '$id' ";
         
         //New session Email
         $_SESSION['email'] = $email;
