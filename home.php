@@ -87,6 +87,45 @@
         </div>
 
     </div>
+
+
+<div class="popWrap">
+<form action="uploadShareFeed.php" method="POST" enctype="multipart/form-data" class="editPost">
+    <button type="button" class="btn btn-danger closeBtn" onclick = "close_();">
+        <span>X</span>
+    </button>
+
+    <div class="alert alert-primary" role="alert">
+      Changing content now here will change the publish date to present date as well.
+    </div>
+
+  <div class="form-group">
+    <label for="exampleInputEmail1">Your Title</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="What did you do today ?" name="title">
+    <small id="emailHelp" class="form-text text-muted">Short and Sweet Title will be better to remember !</small>
+  </div>
+
+  <div class="form-group">
+    <div class="form-group">
+    <label for="exampleFormControlTextarea1">Your Message Body</label>
+    <textarea class="form-control rounded-0" id="exampleFormControlTextarea1" rows="10" name="message"></textarea>
+    </div>
+  </div>
+
+    <div class="form-group">
+        <div class="custom-file">
+            <input type="file" class="custom-file-input" id="customFile" name="file">
+            <label class="custom-file-label" for="customFile">Choose file</label>
+        </div>
+    </div>
+
+  <button type="submit" class="btn btn-primary" name='uploadFeed'>Update</button>
+</form>
+
+
+</div>
+<!-- End of POP Wrap -->
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

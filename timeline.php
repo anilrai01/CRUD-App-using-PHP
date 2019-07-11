@@ -24,7 +24,7 @@ echo $res['descTime'];
 echo '</div>';
 echo '<div class="formBtns">';
 
-echo  '<a href="home.php?ed='.$res['tids'].'" class="btn btn-success">Edit</a>';
+echo  '<a href="#" class="btn btn-success" onclick="call_();">Edit</a>';
 echo  '<a href="delPost.php?nq='.$res['tids'].'" class="btn btn-danger">Delete</a>';
             
 echo '</div>';
