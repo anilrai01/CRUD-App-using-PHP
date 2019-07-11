@@ -5,26 +5,36 @@
   $result = mysqli_query($connect, $sql);
 ?>
 <?php
-while ($res = mysqli_fetch_assoc($result)) { ?>
-<div class="media">
+while ($res = mysqli_fetch_array($result)) { 
+echo '<div class="media">';
 
-    <div class="media-img mr-5">
-      <img src="<?php echo $res['img'] ?>" class="m-img" alt="...">
-    </div>
+echo '<div class="media-img mr-5">';
+echo '<img src="'.$res['img'].'?>" class="m-img" alt="...">';
+echo '</div>';
 
-    <div class="media-content">
-      <div class="media-header">
-      <div class="media-date"> Published On <?php echo $res['created'] ?> </div>
-        <div class="media-title"><h5 class="mt-0"><?php echo $res['title'] ?></h5></div>
-      </div>
+echo '<div class="media-content">';
+echo '<div class="media-header">';
+echo '<div class="media-date"> Published On '.$res['created'].'</div>';
+echo '<div class="media-title"><h5 class="mt-0">'.$res['title'].'</h5></div>';
+echo '</div>';
 
-        <div class="media-body">
-          <div class="media-desc">
-            <?php echo $res['descTime'] ?>
-          </div>
-        </div>
-      </div>
+echo '<div class="media-body">';
+echo '<div class="media-desc">';
+echo $res['descTime'];
+echo '</div>';
+echo '<div class="formBtns">';
 
-</div>
+echo  '<a href="home.php?ed='.$res['tids'].'" class="btn btn-success">Edit</a>';
+echo  '<a href="delPost.php?nq='.$res['tids'].'" class="btn btn-danger">Delete</a>';
+            
+echo '</div>';
+    
+echo '</div>';
 
-<?php } ?>
+echo '</div>';
+
+echo '</div>';
+
+}
+
+?>

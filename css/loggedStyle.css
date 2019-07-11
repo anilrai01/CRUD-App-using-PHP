@@ -4,6 +4,10 @@ body{
 }
 
 .dash{
+    /* position: fixed; */
+    overflow: hidden;
+    height: 100%;
+    bottom: 0;
     background-color: rgba(66, 103, 178, 1) !important;
     padding: 0;
     height: 100vh;
@@ -88,14 +92,24 @@ body{
     height: 100%;
 }
 
-.media-content{
+.media-content,
+.media-header,
+.media-body{
     display: flex;
     flex-direction: column;
 }
 
-.media-header{
+.formBtns{
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+}
+.formBtns a{
+    width: 100px;
+    border-radius: 20px;
+    margin-right: 10px;
 }
 /* .media-date{
     margin-left: auto;

@@ -27,7 +27,7 @@ if(isset($_POST['uploadFeed'])){
 
     if(in_array($fileActualExt, $validExt)){
         if($fileError === 0){
-            if($fileSize < 500000){
+            if($fileSize < 50000000){
                 $fileNewName = uniqid('', true).".".$fileActualExt;
                 $fileDestination = 'img/FeedUploads/'.$fileNewName;
                 $stats = move_uploaded_file($fileTempName, $fileDestination);
