@@ -17,7 +17,7 @@ function call_(){
     popWrapForm.style.opacity = 1;
     popWrapForm.zIndex = "10";
     popWrapForm.style.transform = "scale(1)";
-}
+};
 
 function close_(){
     console.log('Pressed');
@@ -28,4 +28,13 @@ function close_(){
     popWrapForm.style.opacity = 0;
     popWrapForm.style.transform = "scale(0)";
     popWrapForm.style.zIndex = "-10";
+};
+
+var obj = {
+    postID: '',
+}
+
+function getID(tempID){
+    obj.postID = tempID;
+    console.log(obj.postID);
 }

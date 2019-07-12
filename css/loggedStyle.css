@@ -71,20 +71,20 @@ body{
     background: rgb(243, 243, 243);
     padding: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
-    border-radius: 20px;
+    /* border-radius: 20px; */
     transition: 0.3s ease-in-out;
     margin-bottom: 20px;
 }
-.media:hover{
+/* .media:hover{
     transform: translateY(-5px);
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
-}
+} */
  .media-img{
-    width: 40%;
+    width: 500px;
    height: 400px; 
     
     overflow: hidden;  
-    border-radius: 20px; 
+    /* border-radius: 20px;  */
 }
 
 .media-img img{
@@ -106,9 +106,10 @@ body{
     display: flex;
     flex-direction: row;
 }
-.formBtns a{
+.formBtns a,
+.formBtns form button{
     width: 100px;
-    border-radius: 20px;
+    border-radius: 0px;
     margin-right: 10px;
 }
 /* .media-date{
@@ -123,42 +124,3 @@ t
     height: 100%;
 } */
 
-
-.popWrap{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    /* background: rgba(0, 0, 0, 0.7); */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 0.7s ease-in-out;
-    z-index: -5;
-}
-.popWrap form{
-    position: relative;
-    background: #fff;
-    padding: 30px;
-    border-radius: 20px;
-    transform: scale(0);
-    opacity: 0;
-    transition: 0.7s ease-in-out;
-}
-.popWrap form .alert{
-    margin-top: 50px;
-}
-
-.closeBtn{
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    justify-content: flex-end;
-    border: none;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    background: rgb(230, 44, 44);
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
-}
