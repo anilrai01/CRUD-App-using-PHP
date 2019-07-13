@@ -12,9 +12,9 @@
         
         $file = $_FILES['updateFile'];
 
-        echo $_FILES['updateFile']['name'];
-        echo "<br>";
-        echo $_FILES['updateFile']['tmp_name'];
+        // echo $_FILES['updateFile']['name'];
+        // echo "<br>";
+        // echo $_FILES['updateFile']['tmp_name'];
 
 
     if(empty($_FILES['updateFile']['name'])){
@@ -24,7 +24,7 @@
         if(mysqli_query($connect, $sql)){
             echo "Files Updated Successfully";
             
-            header("refresh: 1; url=home.php");
+            header("`refresh`: 1; url=home.php");
         } 
     }else{
         echo "Files Selected </br>";

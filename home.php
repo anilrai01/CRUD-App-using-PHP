@@ -18,7 +18,7 @@
   <body>
       
     <div class="container-fluid">
-        <div class="row">
+        
             <!-- DashBoard -->
             <div class="col-md-3 dash">
 
@@ -37,6 +37,7 @@
                         <button class = "ownBtn" name = "memories"> Timeline </button>
                         <button class = "ownBtn" name = "postFeed"> Share Feeds </button>
                         <button class = "ownBtn" name = "profile"> Update Profile </button>
+                        <!-- <button class = "ownBtn" name = "profile"> Send Email </button> -->
                         <button class = "ownBtn" name = "logout"> Log Out </button>
                     </form>
                 </div>
@@ -44,9 +45,9 @@
             </div>
 
             <!-- Content -->
-            <div class="col-md-9 rightPlank">
+           
 
-                <div class="container mt-5 p-5 dashField">
+                <div class="container p-5 dashField rightPlank">
 
                     <?php include('timeline.php');  ?>
 
@@ -84,9 +85,9 @@
                 </div>
 
             </div>
-        </div>
 
-    </div>
+
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

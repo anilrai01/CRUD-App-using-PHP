@@ -4,14 +4,28 @@ body{
 }
 
 .dash{
-    /* position: fixed; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 110vh;
+    width: 400px;
+    
     overflow: hidden;
-    height: 100%;
     bottom: 0;
     background-color: rgba(66, 103, 178, 1) !important;
     padding: 0;
-    height: 100vh;
+
 }
+
+.rightPlank{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #fff !important;
+}
+
+
+
 .profImage{
     width: 100%;
     height: 250px;

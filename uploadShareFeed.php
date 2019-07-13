@@ -32,13 +32,15 @@ if(isset($_POST['uploadFeed'])){
                 $fileDestination = 'img/FeedUploads/'.$fileNewName;
                 $stats = move_uploaded_file($fileTempName, $fileDestination);
                 // echo $title."<br>".$description."<br>".$fileNewName;
-                $query = "INSERT INTO timeline(title,descTime,img,ids)values('$title', '$description', '$fileDestination', '$id');";
+                $query = "INSERT INTO timeline(title,descTime,img,ids)values('$title', '$description', '$fileDestination', '$id')";
                 // echo "<br>".$query;
                 if(mysqli_query($connect, $query)){
                     echo "Files Uploaded Successfully";
                     // header("refresh: 2; Location: home.php");
                     header("refresh: 2; url=home.php");
 
+                }else{
+                    echo "Failed to upload";
                 }
 
                 // header("Location: home.php?uploadSuccess");
