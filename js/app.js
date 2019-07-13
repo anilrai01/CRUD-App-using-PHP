@@ -1,3 +1,18 @@
+const DOMElements = {
+    media: document.querySelector('.media'),
+    node: document.querySelectorAll('.media'),
+}
+let modules = Array.prototype.slice.call(DOMElements.node);
+console.log(modules);
+
+const animate =  el =>{
+    el.style.WebkitTransform = "translateY(0) scale(1)";
+    el.style.msTransform = "translateY(0) scale(1)";
+    el.style.WebkitTransform = "translateY(0) scale(1)";
+    el.style.opacity = "1";
+}
+
+modules.forEach(el => animate(el));
 
 // Add the following code if you want the name of the file appear on select
 $(".custom-file-input").on("change", function() {
@@ -38,3 +53,10 @@ function getID(tempID){
     obj.postID = tempID;
     console.log(obj.postID);
 }
+
+// window.onload(()=>{
+//     DOMElements.media.style.transform = "translateY(0) sclae(1)";
+//     DOMElements.media.style.opacity = 1;
+// })
+
+

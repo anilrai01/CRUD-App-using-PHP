@@ -44,7 +44,7 @@
             </div>
 
             <!-- Content -->
-            <div class="col-md-9 pull-right">
+            <div class="col-md-9 rightPlank">
 
                 <div class="container mt-5 p-5 dashField">
 
