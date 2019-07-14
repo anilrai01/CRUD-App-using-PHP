@@ -117,6 +117,7 @@ function user_login(){
     $sql = "SELECT * FROM userinfo WHERE email = '$logEmail' AND pswrd = '$checkPswrd'";
     $result = $db->query($sql);
 
+    
     if($result->num_rows == 1){
         $data = $result->fetch_assoc();
         $_SESSION['email'] = $data['email'];

@@ -24,7 +24,7 @@
         if(mysqli_query($connect, $sql)){
             echo "Files Updated Successfully";
             
-            header("`refresh`: 1; url=home.php");
+            header("refresh: 1; url=home.php");
         } 
     }else{
         echo "Files Selected </br>";
