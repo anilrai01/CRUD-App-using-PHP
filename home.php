@@ -38,9 +38,10 @@
                 <div class="togglers">
                     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
                         <button class = "ownBtn" name = "memories"> Timeline </button>
+                        <button class = "ownBtn" name = "emails"> Email </button>
                         <button class = "ownBtn" name = "postFeed"> Share Feeds </button>
                         <button class = "ownBtn" name = "profile"> Update Profile </button>
-                        <!-- <button class = "ownBtn" name = "profile"> Send Email </button> -->
+                        <button class = "ownBtn" name = "sendMail"> Send Email </button>
                         <button class = "ownBtn" name = "logout"> Log Out </button>
                     </form>
                 </div>
@@ -73,6 +74,14 @@
                         include('clearView.php');
                         // echo "Pressed";
                         include('dispForm.php');
+                        }
+                    ?>
+
+                    <?php 
+                        if(isset($_POST['sendMail'])){
+                        include('clearView.php');
+                        // echo "Pressed";
+                        include('dispMailForm.php');
                         }
                     ?>
 
