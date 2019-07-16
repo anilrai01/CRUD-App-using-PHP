@@ -30,6 +30,7 @@
         }
     } else{
         echo "User not found";
+        header("refresh: 1; url=home.php");
     }
     
 ?>
