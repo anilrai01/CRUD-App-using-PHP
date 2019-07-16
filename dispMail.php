@@ -12,8 +12,10 @@
     
     $senderArray = array();
     // $count = 0;
-
+    
     while($row = mysqli_fetch_assoc($result)){
+        if(!$row['seen']){
+
         // echo $row['senderID'];
         $sendID = $row['senderID'];
         // echo "<br>";
@@ -32,7 +34,7 @@
                 $senderArray[$senderName] = 1;
             }
         }
-        
+    }   
     }
 
     foreach(array_keys($senderArray) as $key){
