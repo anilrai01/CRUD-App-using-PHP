@@ -61,6 +61,13 @@
                             include('timeline.php');
                         }
                     ?>
+
+                    <?php 
+                        if(isset($_POST['emails'])){
+                            include('clearView.php');
+                            include('dispMail.php');
+                        }
+                    ?>
                     
                     <?php 
                         if(isset($_POST['postFeed'])){
