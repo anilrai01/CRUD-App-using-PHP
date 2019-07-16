@@ -24,20 +24,20 @@
         $ssql = "SELECT username from userinfo where ids = '$sendID'";
         $rresult = mysqli_query($connect, $ssql);
 
-        if($rows = mysqli_fetch_assoc($rresult)){
-            // echo $rows['username'];
-            $senderName = $rows['username'];
-            if(!$row['seen']){
-            if(array_key_exists($senderName, $senderArray)){
-                // echo "Exists";
-                $senderArray[$senderName] = $senderArray[$senderName]+1;
-            }else{
-                $senderArray[$senderName] = 1;
+            if($rows = mysqli_fetch_assoc($rresult)){
+                // echo $rows['username'];
+                $senderName = $rows['username'];
+                if(!$row['seen']){
+                if(array_key_exists($senderName, $senderArray)){
+                    // echo "Exists";
+                    $senderArray[$senderName] = $senderArray[$senderName]+1;
+                }else{
+                    $senderArray[$senderName] = 1;
+                }
             }
-        }
-        else{
-            $senderArray[$senderName] = 0;
-        }
+            else{
+                $senderArray[$senderName] = 0;
+            }
         }
     // }
       
@@ -49,9 +49,12 @@
         <div class="media-body">
             <h5 class="mt-0">'.$key;
             if($senderArray[$key]) {
-                echo '<span class="badge badge-danger">'.$senderArray[$key].'</span>';
+                echo '  <span class="badge badge-danger">'.$senderArray[$key].'</span>';
             };
         echo '</h5></div>
+        <form action="dispMsg.php?mId='.$key.'" method="POST">
+            <button type = "submit" class="btn btn-success">Open</button>
+        </form>
         </div>';
     }
    
