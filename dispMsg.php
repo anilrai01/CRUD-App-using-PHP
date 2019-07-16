@@ -12,7 +12,7 @@
     while($res = mysqli_fetch_assoc($result)){
         $senderID = $res['ids'];
     }
-
+    $myID = $_SESSION['id'];
     // echo "Your ID is ",$senderID;
 
 ?>
@@ -37,7 +37,7 @@
                 <a href="home.php" class="btn btn-primary d-flex justify-content-center">Back to Home</a>
             ';
 
-            $getMail = "SELECT * FROM message WHERE senderID = '$senderID' ";
+            $getMail = "SELECT * FROM message WHERE senderID = '$senderID' and receiverID = '$myID' ";
                 // echo $getMail;
                 $getResult = mysqli_query($connect, $getMail);
                 
@@ -57,6 +57,8 @@
                     <div class="media-body">
                         <h5 class="mt-0">'.$senderUser.'</h5>
                         <p>'.$rows['message'].'</p>
+
+                        <p>Send at '.$rows['msgDate'].'</p>
                     </div>
                     </div>';
 

@@ -7,11 +7,11 @@
     $senderID = $_SESSION['id'];
     $message = $_POST['message'];
 
-    echo $senderMail;
-    echo "<br>";
-    echo $receiverMail;
-    echo "<br>";
-    echo $message;
+    // echo $senderMail;
+    // echo "<br>";
+    // echo $receiverMail;
+    // echo "<br>";
+    // echo $message;
 
     $checkSql = "SELECT ids from userinfo WHERE email = '$receiverMail'";
     $checkResult = mysqli_query($connect, $checkSql);
